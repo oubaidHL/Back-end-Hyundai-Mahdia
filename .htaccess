@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /api/index.php
+ErrorDocument 404 /api/index.php
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin: "*"
+    Header set Access-Control-Allow-Methods: "GET, POST, PUT, DELETE, OPTIONS"
+</IfModule>
